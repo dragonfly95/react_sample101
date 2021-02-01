@@ -6,39 +6,17 @@ import React, { Component } from 'react';
 
 import './App.css';
 
+/**
+ * https://beomy.tistory.com/35
+ */
 class App extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: 0,
-            diff: 1
-        }
-    }
-
-    onChange = (diff) => {
-        this.setState({
-            diff: diff
-        });
-    }
-
-    onIncrement = () => {
-        this.setState( prevState => ({
-            value: prevState.value + Number(this.state.diff)
-        }));
-    }
-
-    onDecrement = () => {
-        this.setState(prevState => ({
-            value: prevState.value - Number(this.state.diff)
-        }))
-    };
     render() {
         return(
             <div>
-                <Counter value={this.state.value}/>
-                <Option diff={this.state.diff} onChange={this.onChange}/>
-                <Button onIncrement={this.onIncrement} onDecrement={this.onDecrement}/>
+                <Counter store={this.props.store}/>
+                <Option store={this.props.store}/>
+                <Button store={this.props.store}/>
             </div>
         )
     }

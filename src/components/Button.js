@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {increment, decrement} from "../actions";
 
 class Button extends Component {
     constructor(props) {
@@ -8,11 +9,11 @@ class Button extends Component {
     }
 
     onIncrement(event) {
-        this.props.onIncrement();
+        this.props.store.dispatch(increment());
     }
 
     onDecrement(event) {
-        this.props.onDecrement();
+        this.props.store.dispatch(decrement());
     }
 
     render() {
