@@ -5,6 +5,7 @@ import Option from "./components/Option";
 import React, { Component } from 'react';
 
 import './App.css';
+import Login from "./components/Login";
 
 class App extends Component {
 
@@ -39,6 +40,9 @@ class App extends Component {
                 <Counter value={this.state.value}/>
                 <Option diff={this.state.diff} onChange={this.onChange}/>
                 <Button onIncrement={this.onIncrement} onDecrement={this.onDecrement}/>
+
+                <hr/>
+                <Login />
             </div>
         )
     }
